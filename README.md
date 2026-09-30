@@ -43,7 +43,7 @@ cd "$tmp_dir"
 printf '\nDownloading greenServeFE...\n'
 
 curl -fL --show-error --retry 3 \
-  "https://github.com/dominexmacedon-docs/greenServeFE-/releases/download/greenServeFE-v1.0.0/greenServeFE-linux-x86_64.zip" \
+  "https://github.com/dominexmacedon-docs/greenServeFE-/releases/download/greenServeFE-v1.0.1/greenServeFE-linux-x86_64.zip" \
   -o greenServeFE-linux-x86_64.zip
 
 curl -fL --show-error --retry 3 \
