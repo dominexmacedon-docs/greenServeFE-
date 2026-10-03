@@ -10,7 +10,7 @@ The Linux x86_64 release consists of the following packages:
 
 ### Core engine
 
-- `greenServeFE-v1.0.1` — the greenServeFE executable
+- `greenServeFE-v1.0.2` — the greenServeFE executable
 
 ### Native modules
 
@@ -33,7 +33,7 @@ All release packages are available from the `greenServeFE-` GitHub releases.
 
 | Package | Release |
 |---|---|
-| greenServeFE | `greenServeFE-v1.0.1` |
+| greenServeFE | `greenServeFE-v1.0.2` |
 | gs_table | `gs_table-v1.0.0` |
 | gsnum | `gsnum-v1.0.0` |
 | server | `server-v1.0.0` |
@@ -90,7 +90,7 @@ cd "$tmp_dir"
 printf '\nDownloading greenServeFE...\n'
 
 curl -fL --show-error --retry 3 \
-  "https://github.com/dominexmacedon-docs/greenServeFE-/releases/download/greenServeFE-v1.0.1/greenServeFE-linux-x86_64.zip" \
+  "https://github.com/dominexmacedon-docs/greenServeFE-/releases/download/greenServeFE-v1.0.2/greenServeFE-linux-x86_64.zip" \
   -o greenServeFE-linux-x86_64.zip
 
 printf 'Downloading gs_table...\n'
