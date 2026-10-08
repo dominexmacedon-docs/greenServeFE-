@@ -26,6 +26,7 @@ The Linux x86_64 release consists of the following packages:
 - `gs_hash-v1.0.0` — the `gs_hash.so` native module
 - `gs_env-v1.0.0` — the `gs_env.so` native module
 - `gs_base64-v1.0.0` — the `gs_base64.so` native module
+- `gs_object-v1.0.0` — the `gs_object.so` native module
 
 ## Release downloads
 
@@ -46,6 +47,7 @@ All release packages are available from the `greenServeFE-` GitHub releases.
 | gs_hash | `gs_hash-v1.0.0` |
 | gs_env | `gs_env-v1.0.0` |
 | gs_base64 | `gs_base64-v1.0.0` |
+| gs_object | `gs_object-v1.0.0` |
 
 ## Linux installation
 
@@ -75,6 +77,7 @@ sudo rm -f /usr/local/lib/modules/gs_json.so
 sudo rm -f /usr/local/lib/modules/gs_hash.so
 sudo rm -f /usr/local/lib/modules/gs_env.so
 sudo rm -f /usr/local/lib/modules/gs_base64.so
+sudo rm -f /usr/local/lib/modules/gs_object.so
 
 sudo rm -f /etc/profile.d/greenServeFE.sh
 
@@ -165,6 +168,12 @@ curl -fL --show-error --retry 3 \
   "https://github.com/dominexmacedon-docs/greenServeFE-/releases/download/gs_base64-v1.0.0/gs_base64-linux-x86_64.zip" \
   -o gs_base64-linux-x86_64.zip
 
+printf 'Downloading gs_object...\n'
+
+curl -fL --show-error --retry 3 \
+  "https://github.com/dominexmacedon-docs/greenServeFE-/releases/download/gsobect-v1.0.0/greenServeFE-gs-object-linux-x86_64.zip" \
+  -o greenServeFE-gs-object-linux-x86_64.zip
+
 printf '\nCreating extraction directories...\n'
 
 mkdir -p \
@@ -180,7 +189,8 @@ mkdir -p \
   gs_json \
   gs_hash \
   gs_env \
-  gs_base64
+  gs_base64 \
+  gs_object
 
 printf '\nExtracting packages...\n'
 
@@ -197,6 +207,7 @@ unzip -q -o gs_json-linux-x86_64.zip -d gs_json
 unzip -q -o gs_hash-linux-x86_64.zip -d gs_hash
 unzip -q -o gs_env-linux-x86_64.zip -d gs_env
 unzip -q -o gs_base64-linux-x86_64.zip -d gs_base64
+unzip -q -o greenServeFE-gs-object-linux-x86_64.zip -d gs_object
 
 printf '\nVerifying downloaded packages...\n'
 
@@ -214,6 +225,7 @@ test -f gs_json/gs_json.so
 test -f gs_hash/gs_hash.so
 test -f gs_env/gs_env.so
 test -f gs_base64/gs_base64.so
+test -f gs_object/gs_object.so
 
 printf 'All release packages verified.\n'
 
@@ -277,6 +289,10 @@ sudo install -m 755 \
   gs_base64/gs_base64.so \
   /usr/local/lib/modules/gs_base64.so
 
+sudo install -m 755 \
+  gs_object/gs_object.so \
+  /usr/local/lib/modules/gs_object.so
+
 printf '\nConfiguring module path...\n'
 
 echo 'export GREENSERVE_MODULE_PATH=/usr/local/lib/modules' |
@@ -308,7 +324,8 @@ ls -lh \
   /usr/local/lib/modules/gs_json.so \
   /usr/local/lib/modules/gs_hash.so \
   /usr/local/lib/modules/gs_env.so \
-  /usr/local/lib/modules/gs_base64.so
+  /usr/local/lib/modules/gs_base64.so \
+  /usr/local/lib/modules/gs_object.so
 
 printf '\nInstallation verification:\n'
 
@@ -326,6 +343,7 @@ test -f /usr/local/lib/modules/gs_json.so
 test -f /usr/local/lib/modules/gs_hash.so
 test -f /usr/local/lib/modules/gs_env.so
 test -f /usr/local/lib/modules/gs_base64.so
+test -f /usr/local/lib/modules/gs_object.so
 
 test -f /etc/profile.d/greenServeFE.sh
 
@@ -342,6 +360,7 @@ printf 'gs_json module: OK\n'
 printf 'gs_hash module: OK\n'
 printf 'gs_env module: OK\n'
 printf 'gs_base64 module: OK\n'
+printf 'gs_object module: OK\n'
 printf 'Module configuration: OK\n'
 
 printf '\nAll greenServeFE packages installed successfully.\n'
