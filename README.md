@@ -171,7 +171,7 @@ curl -fL --show-error --retry 3 \
 printf 'Downloading gs_object...\n'
 
 curl -fL --show-error --retry 3 \
-  "https://github.com/dominexmacedon-docs/greenServeFE-/releases/download/gsobect-v1.0.0/greenServeFE-gs-object-linux-x86_64.zip" \
+  "https://github.com/dominexmacedon-docs/greenServeFE-/releases/download/gsobject-v1.0.0/greenServeFE-gs-object-linux-x86_64.zip" \
   -o greenServeFE-gs-object-linux-x86_64.zip
 
 printf '\nCreating extraction directories...\n'
