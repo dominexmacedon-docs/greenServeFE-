@@ -16,7 +16,7 @@ The Linux x86_64 release consists of the following packages:
 
 - `gs_table-v1.0.0` — the `gs_table.so` native module
 - `gsnum-v1.0.0` — the `gsnum.so` native module
-- `server-v1.0.0` — the `server.so` native module
+- `server-v1.0.1` — the `server.so` native module
 - `gs_uuid-v1.0.0` — the `gs_uuid.so` native module
 - `gs_time-v1.0.0` — the `gs_time.so` native module
 - `gs_string-v1.0.0` — the `gs_string.so` native module
@@ -37,7 +37,7 @@ All release packages are available from the `greenServeFE-` GitHub releases.
 | greenServeFE | `greenServeFE-v1.0.3` |
 | gs_table | `gs_table-v1.0.0` |
 | gsnum | `gsnum-v1.0.0` |
-| server | `server-v1.0.0` |
+| server | `server-v1.0.1` |
 | gs_uuid | `gs_uuid-v1.0.0` |
 | gs_time | `gs_time-v1.0.0` |
 | gs_string | `gs_string-v1.0.0` |
@@ -111,7 +111,7 @@ curl -fL --show-error --retry 3 \
 printf 'Downloading server...\n'
 
 curl -fL --show-error --retry 3 \
-  "https://github.com/dominexmacedon-docs/greenServeFE-/releases/download/server-v1.0.0/server-linux-x86_64.zip" \
+  "https://github.com/dominexmacedon-docs/greenServeFE-/releases/download/server-v1.0.1/server-linux-x86_64.zip" \
   -o server-linux-x86_64.zip
 
 printf 'Downloading gs_uuid...\n'
