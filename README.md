@@ -4,50 +4,47 @@
 
 It compiles `.gsve` source into bytecode and executes that bytecode with an explicit virtual machine. The repository also provides native `.so` modules that are loaded by greenServeFE at runtime.
 
-## Release packages
+## Latest release versions
 
-The Linux x86_64 release consists of the following packages:
+Release tags and uploaded ZIP assets were checked against the repository's published GitHub Releases on **29 October 2026**. These are the latest published, non-draft, non-prerelease versions found for each package.
 
-### Core engine
+| Package | Latest release | Asset |
+|---|---|---|
+| greenServeFE | `greenServeFE-v1.0.4` | `greenServeFE-linux-x86_64.zip` |
+| server | `server-v1.0.3` | `server-linux-x86_64.zip` |
+| construct | `construct-v1.0.1` | `construct-linux-x86_64.zip` |
+| gsnum | `gsnum-v1.0.1` | `gsnum-linux-x86_64.zip` |
+| gs_table | `gs_table-v1.0.0` | `gs_table-linux-x86_64.zip` |
+| gs_uuid | `gs_uuid-v1.0.0` | `gs_uuid-linux-x86_64.zip` |
+| gs_time | `gs_time-v1.0.0` | `gs_time-linux-x86_64.zip` |
+| gs_string | `gs_string-v1.0.0` | `gs_string-linux-x86_64.zip` |
+| gs_random | `gs_random-v1.0.0` | `gs_random-linux-x86_64.zip` |
+| gs_path | `gs_path-v1.0.0` | `gs_path-linux-x86_64.zip` |
+| gs_json | `gs_json-v1.0.0` | `gs_json-linux-x86_64.zip` |
+| gs_hash | `gs_hash-v1.0.0` | `gs_hash-linux-x86_64.zip` |
+| gs_env | `gs_env-v1.0.0` | `gs_env-linux-x86_64.zip` |
+| gs_base64 | `gs_base64-v1.0.0` | `gs_base64-linux-x86_64.zip` |
+| gs_object | `gsobject-v1.0.0` | `greenServeFE-gs-object-linux-x86_64.zip` |
+| gs_neural | `gs_neural-v1.0.0` | `gs_neural-linux-x86_64.zip` |
+| gs_log | `gs_log-v1.0.0` | `gs_log-linux-x86_64.zip` |
+| gs_learn | `gs_learn-v1.0.0` | `gs_learn-linux-x86_64.zip` |
+| gs_http | `gs_http-v1.0.0` | `gs_http-linux-x86_64.zip` |
+| gs_form | `gs_form-v1.0.0` | `gs_form-linux-x86_64.zip` |
+| gs_file | `gs_file-v1.0.0` | `gs_file-linux-x86_64.zip` |
+| gs_db | `gs_db-v1.0.0` | `gs_db-linux-x86_64.zip` |
+| gs_csv | `gs_csv-v1.0.0` | `gs_csv-linux-x86_64.zip` |
+| gs_crypto | `gs_crypto-v1.0.0` | `gs_crypto-linux-x86_64.zip` |
+| gs_cortex | `gs_cortex-v1.0.0` | `gs_cortex-linux-x86_64.zip` |
+| gs_array | `gs_array-v1.0.0` | `gs_array-linux-x86_64.zip` |
+| gs-brain | `gs-brain-v1.0.0` | `gs-brain-linux-x86_64.zip` |
+| gs_compute | `gs_compute-v1.0.0` | `gs_compute-linux-x86_64.zip` |
+| gs_math | `gs_math-v1.0.0` | `gs_math-linux-x86_64.zip` |
+| gs_url | `gs_url-v1.0.0` | `gs_url-linux-x86_64.zip` |
+| gs_validate | `gs_validate-v1.0.0` | `gs_validate-linux-x86_64.zip` |
 
-- `greenServeFE-v1.0.4` — the greenServeFE executable
+Every release link follows this format: `https://github.com/dominexmacedon-docs/greenServeFE-/releases/tag/TAG_NAME`. See the [complete releases page](https://github.com/dominexmacedon-docs/greenServeFE-/releases) for release notes and assets.
 
-### Native modules
-
-- `gs_table-v1.0.0` — the `gs_table.so` native module
-- `gsnum-v1.0.1` — the `gsnum.so` native module
-- `server-v1.0.1` — the `server.so` native module
-- `gs_uuid-v1.0.0` — the `gs_uuid.so` native module
-- `gs_time-v1.0.0` — the `gs_time.so` native module
-- `gs_string-v1.0.0` — the `gs_string.so` native module
-- `gs_random-v1.0.0` — the `gs_random.so` native module
-- `gs_path-v1.0.0` — the `gs_path.so` native module
-- `gs_json-v1.0.0` — the `gs_json.so` native module
-- `gs_hash-v1.0.0` — the `gs_hash.so` native module
-- `gs_env-v1.0.0` — the `gs_env.so` native module
-- `gs_base64-v1.0.0` — the `gs_base64.so` native module
-- `gs_object-v1.0.0` — the `gs_object.so` native module
-
-## Release downloads
-
-All release packages are available from the `greenServeFE-` GitHub releases.
-
-| Package | Release |
-|---|---|
-| greenServeFE | `greenServeFE-v1.0.4` |
-| gs_table | `gs_table-v1.0.0` |
-| gsnum | `gsnum-v1.0.1` |
-| server | `server-v1.0.1` |
-| gs_uuid | `gs_uuid-v1.0.0` |
-| gs_time | `gs_time-v1.0.0` |
-| gs_string | `gs_string-v1.0.0` |
-| gs_random | `gs_random-v1.0.0` |
-| gs_path | `gs_path-v1.0.0` |
-| gs_json | `gs_json-v1.0.0` |
-| gs_hash | `gs_hash-v1.0.0` |
-| gs_env | `gs_env-v1.0.0` |
-| gs_base64 | `gs_base64-v1.0.0` |
-| gs_object | `gs_object-v1.0.0` |
+The installation script below installs the core engine and the original base-module set. Additional modules in the table can be downloaded from their individual release pages.
 
 ## Linux installation
 
@@ -111,7 +108,7 @@ curl -fL --show-error --retry 3 \
 printf 'Downloading server...\n'
 
 curl -fL --show-error --retry 3 \
-  "https://github.com/dominexmacedon-docs/greenServeFE-/releases/download/server-v1.0.1/server-linux-x86_64.zip" \
+  "https://github.com/dominexmacedon-docs/greenServeFE-/releases/download/server-v1.0.3/server-linux-x86_64.zip" \
   -o server-linux-x86_64.zip
 
 printf 'Downloading gs_uuid...\n'
