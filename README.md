@@ -10,7 +10,7 @@ Release tags and uploaded ZIP assets were checked against the repository's publi
 
 | Package | Latest release | Asset |
 |---|---|---|
-| greenServeFE | `greenServeFE-v1.0.4` | `greenServeFE-linux-x86_64.zip` |
+| greenServeFE | `greenServeFE-v1.0.5` | `greenServeFE-linux-x86_64.zip` |
 | server | `server-v1.0.3` | `server-linux-x86_64.zip` |
 | construct | `construct-v1.0.1` | `construct-linux-x86_64.zip` |
 | gsnum | `gsnum-v1.0.1` | `gsnum-linux-x86_64.zip` |
