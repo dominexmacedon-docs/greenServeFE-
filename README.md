@@ -62,23 +62,13 @@ one install greenServeFE
 
 ### 3. Install native modules
 
-Install one module or several modules in a single command:
+Install each native module with its own command. The `one install` command accepts one package name at a time.
+
+For example:
 
 ```bash
-one install server construct
-```
-
-To install a specific release, append `@VERSION` to the package name:
-
-```bash
-one install server@1.0.0
-one install construct@1.0.1
-```
-
-You can combine version-pinned and unpinned package names in the same command:
-
-```bash
-one install server@1.0.0 construct gs_json@1.0.0 gs_compute
+one install server
+one install construct
 ```
 
 ### Available packages
@@ -119,13 +109,14 @@ one install server@1.0.0 construct gs_json@1.0.0 gs_compute
 
 ### 4. Uninstall packages
 
-Remove a specific package:
+Remove packages individually, using one command for each package:
 
 ```bash
-one uninstall greenServeFE
+one uninstall server
+one uninstall construct
 ```
 
-Remove all packages managed by MacoraOne:
+To remove all packages managed by MacoraOne:
 
 ```bash
 one uninstall all
