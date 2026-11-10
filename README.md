@@ -2,15 +2,64 @@
 
 **greenServeFE** (greenServe Fast Execution) is the VM-based execution engine for the greenServe language.
 
-It compiles `.gsve` source into bytecode and executes that bytecode with an explicit virtual machine. The repository also provides native `.so` modules that are loaded by greenServeFE at runtime.
+It compiles `.gsve` source into bytecode and executes that bytecode with an explicit virtual machine. The repository also provides native `.so` modules loaded at runtime.
 
-## Latest release versions
+## Quick installation
 
-Release tags and uploaded ZIP assets were checked against the repository's published GitHub Releases on **29 October 2026**. These are the latest published, non-draft, non-prerelease versions found for each package.
+The following commands install the MacoraOne `one` CLI on Linux and then install greenServeFE.
 
-| Package | Latest release | Asset |
+### 1. Install MacoraOne
+
+~~~bash
+set -eu
+
+URL="https://github.com/MacoraOne/MacoraOne/releases/download/one-v1.0.2/macoraone-linux-x86_64.zip"
+TMP_DIR="$(mktemp -d)"
+trap 'rm -rf "$TMP_DIR"' EXIT
+
+curl -fL "$URL" -o "$TMP_DIR/macoraone-linux-x86_64.zip"
+unzip -q "$TMP_DIR/macoraone-linux-x86_64.zip" -d "$TMP_DIR/extracted"
+
+# Locate the executable inside the archive.
+BIN="$(find "$TMP_DIR/extracted" -type f \( -name 'macoraone' -o -name 'macoraone-linux-x86_64' -o -name 'one' \) -print -quit)"
+
+if [ -z "$BIN" ]; then
+    echo "Error: could not find the MacoraOne executable in the release archive." >&2
+    echo "Archive contents:" >&2
+    find "$TMP_DIR/extracted" -maxdepth 3 -type f -print >&2
+    exit 1
+fi
+
+chmod +x "$BIN"
+sudo install -m 0755 "$BIN" /usr/local/bin/one
+
+echo "MacoraOne installed as the 'one' command at /usr/local/bin/one"
+one --help
+~~~
+
+### 2. Install greenServeFE
+
+~~~bash
+one install greenServeFE
+~~~
+
+### 3. Install native modules
+
+Install each module separately. MacoraOne accepts one package name per install command.
+
+~~~bash
+one install server
+one install construct
+one install gs_math
+~~~
+
+## Published releases
+
+Release tags and Linux x86_64 ZIP asset names below are the package inventory currently documented for this repository. Check the [GitHub Releases page](https://github.com/dominexmacedon-docs/greenServeFE-/releases) for the authoritative release status, notes, and downloadable assets.
+
+| Package | Release tag | Linux asset |
 |---|---|---|
-| greenServeFE | `greenServeFE-v1.0.5` | `greenServeFE-linux-x86_64.zip` |
+| greenServeFE | `greenServeFE-v1.0.6` | `greenServeFE-linux-x86_64.zip` |
 | server | `server-v1.0.3` | `server-linux-x86_64.zip` |
 | construct | `construct-v1.0.1` | `construct-linux-x86_64.zip` |
 | gsnum | `gsnum-v1.0.1` | `gsnum-linux-x86_64.zip` |
@@ -42,36 +91,9 @@ Release tags and uploaded ZIP assets were checked against the repository's publi
 | gs_url | `gs_url-v1.0.0` | `gs_url-linux-x86_64.zip` |
 | gs_validate | `gs_validate-v1.0.0` | `gs_validate-linux-x86_64.zip` |
 
-Every release link follows this format: `https://github.com/dominexmacedon-docs/greenServeFE-/releases/tag/TAG_NAME`. See the [complete releases page](https://github.com/dominexmacedon-docs/greenServeFE-/releases) for release notes and assets.
+## MacoraOne package commands
 
-## Installation
-
-greenServeFE and its native modules are installed and managed with the **MacoraOne `one` CLI**.
-
-### 1. Install MacoraOne
-
-If the `one` command is not installed, follow the [MacoraOne CLI installation guide](https://macoraone.dominextechdocumentary.workers.dev/macoraone.html) or visit the [MacoraOne repository](https://github.com/MacoraOne/MacoraOne).
-
-### 2. Install greenServeFE
-
-Install the core runtime:
-
-```bash
-one install greenServeFE
-```
-
-### 3. Install native modules
-
-Install each native module with its own command. The `one install` command accepts one package name at a time.
-
-For example:
-
-```bash
-one install server
-one install construct
-```
-
-### Available packages
+Install each package with its own command; do not combine package names.
 
 | Package | Install command |
 |---|---|
@@ -107,42 +129,35 @@ one install construct
 | gs_url | `one install gs_url` |
 | gs_validate | `one install gs_validate` |
 
-### 4. Uninstall packages
+## Uninstall packages
 
-Remove packages individually, using one command for each package:
+Remove packages individually:
 
-```bash
+~~~bash
 one uninstall server
 one uninstall construct
-```
+~~~
 
 To remove all packages managed by MacoraOne:
 
-```bash
+~~~bash
 one uninstall all
-```
+~~~
 
-### 5. Verify and run
+## Verify and run
 
-Check the installed runtime version:
-
-```bash
+~~~bash
 greenServeFE --version
-```
-
-Run a GSVE source file:
-
-```bash
 greenServeFE test.gsve
-```
+~~~
 
-For MacoraOne CLI installation and command information, see the [MacoraOne CLI guide](https://macoraone.dominextechdocumentary.workers.dev/macoraone.html) and [MacoraOne repository](https://github.com/MacoraOne/MacoraOne).
+For more information, see the [MacoraOne installation guide](https://macoraone.dominextechdocumentary.workers.dev/macoraone.html) and [MacoraOne repository](https://github.com/MacoraOne/MacoraOne).
 
 ## Language and runtime
 
 greenServeFE is a VM-based execution engine for the greenServe language. It compiles `.gsve` source files into bytecode and executes that bytecode using its virtual machine. Native modules extend the runtime with additional functionality.
 
-The package list above identifies the runtime and modules available through MacoraOne. Refer to the release notes for package-specific changes and compatibility information.
+Refer to each package's release notes for module-specific changes and compatibility information.
 
 ## Related project
 
